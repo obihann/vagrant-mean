@@ -2,6 +2,17 @@
 
 ## Useful Info
 
+A Vagrant box based containing Ubuntu linux Nginx, Node and Mongo. Provisioned with puppet and ready to deploy. 
+
+Fork us:   
+[https://github.com/obihann/vagrant-mean/](https://github.com/obihann/vagrant-mean/)
+
+Download the latest box:   
+[https://atlas.hashicorp.com/obihann/boxes/mean/](https://atlas.hashicorp.com/obihann/boxes/mean/)
+
+Install the latest box:   
+```$ vagrant init obihann/mean; vagrant up --provider virtualbox```
+
 ###Software Versions
 
 - Ubuntu 12.04 LTS
