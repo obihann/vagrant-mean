@@ -1,24 +1,15 @@
 Class['apt::update'] -> Package <| provider == 'apt' |>
 
-class base::params {
-  $package_ensure = 'installed'
-  $path           = '/usr/bin/'
+package { [
+  'mongodb',
+  'mongodb-server',
+]:
+  ensure  => 'installed',
 }
 
-class base (
-  $package_ensure = $base::params::package_ensure,
-) inherits base::params {
-  package { 
-    [
-        'build-essential',
-        'python-software-properties',
-        'zip',
-        'git',
-    ]:
-    ensure  => $package_ensure,
-  }
+class { 'nodejs::modules':
+  node_modules => [
+    'express',
+    'gulp-cli',
+  ]
 }
-
-include base
-include nginx
-include nodejs
